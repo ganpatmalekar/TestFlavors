@@ -13,18 +13,18 @@ pipeline {
         stage('Compile') {
             steps {
                 // Compile the app and its dependencies
-                sh './gradlew compileReleaseSources'
+                bat './gradlew compileReleaseSources'
             }
         }
         stage('Build APK') {
             steps {
                 // Finish building and packaging the APK
-                sh 'ls -ltr'
-                sh 'pwd'
-                sh 'touch local.properties'
-                sh './gradlew clean'
-                sh './gradlew androidDependencies'
-                sh './gradlew assembleDebug'
+                bat 'ls -ltr'
+                bat 'pwd'
+                bat 'touch local.properties'
+                bat './gradlew clean'
+                bat './gradlew androidDependencies'
+                bat './gradlew assembleDebug'
 
                 // Archive the APKs so that they can be downloaded from Jenkins
                 archiveArtifacts '**/*.apk'
@@ -33,9 +33,9 @@ pipeline {
 
         stage ('Generate release'){
             steps {
-                sh 'ls -ltr'
-                sh 'touch local.properties'
-                sh './gradlew assembleRelease'
+                bat 'ls -ltr'
+                bat 'touch local.properties'
+                bat './gradlew assembleRelease'
             }
         }
     }

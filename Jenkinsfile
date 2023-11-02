@@ -26,7 +26,8 @@ pipeline {
 //                 bat 'mkdir local.properties'
                 bat './gradlew clean'
                 bat './gradlew androidDependencies'
-                bat './gradlew assembleDebug'
+                bat './gradlew assembleDev'
+//                 bat './gradlew assembleRelease'
 
                 // Archive the APKs so that they can be downloaded from Jenkins
                 archiveArtifacts '**/*.apk'

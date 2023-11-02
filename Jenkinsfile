@@ -21,9 +21,9 @@ pipeline {
         stage('Build APK') {
             steps {
                 // Finish building and packaging the APK
-                bat 'dir -ltr'
-                bat 'cd'
-                bat 'mkdir local.properties'
+//                 bat 'dir -ltr'
+//                 bat 'cd'
+//                 bat 'mkdir local.properties'
                 bat './gradlew clean'
                 bat './gradlew androidDependencies'
                 bat './gradlew assembleDebug'
@@ -35,8 +35,8 @@ pipeline {
 
         stage ('Generate release'){
             steps {
-                bat 'dir -ltr'
-                bat 'mkdir local.properties'
+//                 bat 'dir -ltr'
+//                 bat 'mkdir local.properties'
                 bat './gradlew assembleRelease'
             }
         }

@@ -13,7 +13,9 @@ pipeline {
         stage('Compile') {
             steps {
                 // Compile the app and its dependencies
-                bat './gradlew compileReleaseSources'
+                bat './gradlew compileAustraliaReleaseSources'
+                bat './gradlew compileUaeReleaseSources'
+                bat './gradlew compileSingaporeReleaseSources'
             }
         }
         stage('Build APK') {

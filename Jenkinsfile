@@ -16,12 +16,6 @@ pipeline {
                 sh './gradlew compileReleaseSources'
             }
         }
-        stage('Compile') {
-            steps {
-                // Compile the app and its dependencies
-                sh './gradlew compileReleaseSources'
-            }
-        }
         stage('Build APK') {
             steps {
                 // Finish building and packaging the APK

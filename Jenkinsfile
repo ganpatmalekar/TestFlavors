@@ -27,15 +27,10 @@ pipeline {
                 bat './gradlew clean'
                 bat './gradlew androidDependencies'
                 bat './gradlew assembleDev'
-//                 bat './gradlew assembleRelease'
+                bat './gradlew assembleRelease'
 
                 // Archive the APKs so that they can be downloaded from Jenkins
                 archiveArtifacts '**/*.apk'
-            }
-        }
-        stage ('Generate release'){
-            steps {
-                bat './gradlew assembleRelease'
             }
         }
         stage ('App Distribution'){

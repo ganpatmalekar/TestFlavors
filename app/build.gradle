@@ -37,6 +37,13 @@ android {
 
     flavorDimensions = ["default"]
 
+    tasks.register('printCurrentDateTime') {
+        doLast {
+            def currentDateTime = new Date()
+            println "Current Date and Time: ${currentDateTime}"
+        }
+    }
+
     productFlavors {
         uae {
             dimension "default"
@@ -46,9 +53,9 @@ android {
 
             firebaseAppDistribution {
                 appId = "1:328716877129:android:159eb79d10a1f768062e98"
-                groups = "jenkins_cicd_tester_grp"
+                groups = "uae-testers-grp"
                 serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
-                releaseNotes = "New version for test"
+                releaseNotes = "New version for test"+printCurrentDateTime
             }
         }
         singapore {
@@ -60,7 +67,7 @@ android {
 
             firebaseAppDistribution {
                 appId = "1:328716877129:android:12d7a44d6c0d0f5b062e98"
-                groups = "jenkins_cicd_tester_grp"
+                groups = "singapore-testers-grp"
                 serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
                 releaseNotes = "New version for test"
             }
@@ -73,7 +80,7 @@ android {
 
             firebaseAppDistribution {
                 appId = "1:328716877129:android:2f28be441c56ad81062e98"
-                groups = "jenkins_cicd_tester_grp"
+                groups = "australia-testers-grp"
                 serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
                 releaseNotes = "New version for test"
             }

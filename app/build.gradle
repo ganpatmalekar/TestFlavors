@@ -43,6 +43,13 @@ android {
             applicationIdSuffix ".uae"
             versionCode 1
             versionName "1.0"
+
+            firebaseAppDistribution {
+                appId = "1:328716877129:android:159eb79d10a1f768062e98"
+                groups = "jenkins_cicd_tester_grp"
+                serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
+                releaseNotes = "New version for test"
+            }
         }
         singapore {
             dimension "default"
@@ -50,12 +57,26 @@ android {
             versionCode 1
             versionName "1.0"
             proguardFile 'singapore-rules.pro'
+
+            firebaseAppDistribution {
+                appId = "1:328716877129:android:12d7a44d6c0d0f5b062e98"
+                groups = "jenkins_cicd_tester_grp"
+                serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
+                releaseNotes = "New version for test"
+            }
         }
         australia {
             dimension "default"
             applicationIdSuffix ".australia"
             versionCode 1
             versionName "1.0"
+
+            firebaseAppDistribution {
+                appId = "1:328716877129:android:2f28be441c56ad81062e98"
+                groups = "jenkins_cicd_tester_grp"
+                serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
+                releaseNotes = "New version for test"
+            }
         }
     }
     buildTypes {
@@ -63,25 +84,11 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
-            firebaseAppDistribution {
-                appId = "1:328716877129:android:a6c43e7f5fb4e09d062e98"
-                groups = "jenkins_cicd_tester_grp"
-                serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
-                releaseNotes = "New version for test"
-            }
         }
         dev {
             minifyEnabled false
             debuggable true
             signingConfig signingConfigs.dev
-
-            firebaseAppDistribution {
-                appId = "1:328716877129:android:a6c43e7f5fb4e09d062e98"
-                groups = "jenkins_cicd_tester_grp"
-                serviceCredentialsFile = "./testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
-                releaseNotes = "New version for test"
-            }
         }
     }
     compileOptions {

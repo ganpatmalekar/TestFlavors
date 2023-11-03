@@ -33,12 +33,14 @@ pipeline {
                 archiveArtifacts '**/*.apk'
             }
         }
-
         stage ('Generate release'){
             steps {
-//                 bat 'dir -ltr'
-//                 bat 'mkdir local.properties'
                 bat './gradlew assembleRelease'
+            }
+        }
+        stage ('App Distribution'){
+            steps {
+                bat "./gradlew assembleRelease appDistributionUploadRelease"
             }
         }
     }

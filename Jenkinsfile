@@ -40,9 +40,9 @@ pipeline {
         }
         stage ('App Distribution'){
             steps {
-                bat "./gradlew assembleRelease appDistributionAustraliaUploadRelease"
-                bat "./gradlew assembleRelease appDistributionSingaporeUploadRelease"
-                bat "./gradlew assembleRelease appDistributionUaeUploadRelease"
+                bat "./gradlew assembleRelease appDistributionUploadAustraliaRelease"
+                bat "./gradlew assembleRelease appDistributionUploadSingaporeRelease"
+                bat "./gradlew assembleRelease appDistributionUploadUaeRelease"
             }
         }
     }

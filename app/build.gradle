@@ -67,7 +67,7 @@ android {
             firebaseAppDistribution {
                 appId = "1:328716877129:android:a6c43e7f5fb4e09d062e98"
                 groups = "jenkins_cicd_tester_grp"
-                serviceCredentialsFile = "testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
+                serviceCredentialsFile = "$rootDir/testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
                 releaseNotes = "New version for test"
             }
         }
@@ -79,7 +79,7 @@ android {
             firebaseAppDistribution {
                 appId = "1:328716877129:android:a6c43e7f5fb4e09d062e98"
                 groups = "jenkins_cicd_tester_grp"
-                serviceCredentialsFile = "testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
+                serviceCredentialsFile = "$rootDir/testflavor-a4a92-firebase-adminsdk-iifku-d6f3fe95c8.json"
                 releaseNotes = "New version for test"
             }
         }
